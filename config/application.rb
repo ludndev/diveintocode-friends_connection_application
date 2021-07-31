@@ -20,5 +20,8 @@ module DiveintocodeFriendsConnectionApplication
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Africa/Porto-Novo'
     config.active_record.default_timezone = :local
+
+    config.load_defaults 6.1 # I'm using Rails 6 at the time of this article
+    config.exceptions_app = self.routes # Add this line
   end
 end
