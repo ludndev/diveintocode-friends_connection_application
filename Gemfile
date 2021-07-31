@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
+  gem 'faker', '~> 2.18.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
