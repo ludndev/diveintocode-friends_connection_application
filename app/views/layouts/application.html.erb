@@ -36,7 +36,7 @@
             <a class="nav-link" href="<%= auth_profile_path %>">Profile</a>
           </li>
           <li class="nav-item btn-outline-danger  my-sm-0 <%= active_nav(auth_logout_path) %>">
-            <a class="nav-link" href="<%= auth_logout_path %>">Logout</a>
+            <a class="nav-link" href="<%= auth_logout_path %>" data-toggle="modal" data-target="#logoutModal">Logout</a>
           </li>
         <% end %>
       </ul>
@@ -69,6 +69,29 @@
     <span class="text-muted">COPYRIGHT &copy <a href="https://github.com/ludndev" target="_blank">#ludndev</a></span>
   </div>
 </footer>
+
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center pt-4">
+          <strong>You will be log out. Do you want to ?</strong>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <a href="<%= auth_logout_path %>" class="btn btn-danger">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
