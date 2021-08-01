@@ -1,0 +1,39 @@
+<div class="card text-center">
+  <div class="card-header">
+    Profile : <b><%= @current_user.id %></b>
+  </div>
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col-sm-12 mb-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Username</h5>
+            <p class="card-text"><%= @current_user.username %></p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Firstname</h5>
+            <p class="card-text"><%= @current_user.firstname %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Lastname</h5>
+            <p class="card-text"><%= @current_user.lastname %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    Created <%= time_ago_in_words(@current_user.created_at) %>
+  </div>
+</div>
+
