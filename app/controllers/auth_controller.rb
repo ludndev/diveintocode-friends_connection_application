@@ -1,11 +1,7 @@
 class AuthController < ApplicationController
-  include AuthHelper
-
-  before_action :guest_only, only: [:signup, :login, :post_login, :post_signup]
-  before_action :auth_only, only: [:profile]
-  before_action :current_user, only: [:profile]
 
   def welcome
+
   end
 
   def profile
