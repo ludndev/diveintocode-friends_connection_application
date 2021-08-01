@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Sign Up</h1>
+
+  <%= form_with(scope: :auth, url: auth_post_signup_path) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :firstname %><br/>
+      <%= f.text_field :firstname, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :lastname %><br/>
+      <%= f.text_field :lastname, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :username %><br/>
+      <%= f.text_field :username, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %><br/>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Sign Up", class: "btn col btn-success" %>
+    </div>
+
+  <% end %>
+
+  <hr class="my-4">
+  <p class="text-center">You already have an account ?</p>
+  <p class="lead text-center">
+    <a class="btn btn-primary" role="button" href="<%= auth_login_url %>">Login here</a>
+  </p>
+</div>
