@@ -23,9 +23,22 @@
         <li class="nav-item <%= active_nav(root_path) %>">
           <a class="nav-link" href="<%= root_path %>">Home</a>
         </li>
-        <li class="nav-item <%= active_nav(auth_login_path) %>">
-          <a class="nav-link" href="<%= auth_login_path %>">Features</a>
-        </li>
+
+        <% if !logged_in? %>
+          <li class="nav-item <%= active_nav(auth_signup_path) %>">
+            <a class="nav-link" href="<%= auth_signup_path %>">Signup</a>
+          </li>
+          <li class="nav-item <%= active_nav(auth_login_path) %>">
+            <a class="nav-link" href="<%= auth_login_path %>">Login</a>
+          </li>
+        <% else %>
+          <li class="nav-item <%= active_nav(auth_profile_path) %>">
+            <a class="nav-link" href="<%= auth_profile_path %>">Profile</a>
+          </li>
+          <li class="nav-item btn-outline-danger  my-sm-0 <%= active_nav(auth_logout_path) %>">
+            <a class="nav-link" href="<%= auth_logout_path %>">Logout</a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
