@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   root to: 'auth#welcome'
 
+  get '/signup', to: 'auth#signup', as: 'auth_signup'
+  post '/signup', to: 'auth#post_signup', as: 'auth_post_signup'
   get '/login', to: 'auth#login', as: 'auth_login'
+  post '/login', to: 'auth#post_login', as: 'auth_post_login'
   get '/logout', to: 'auth#logout', as: 'auth_logout'
+  get '/profile', to: 'auth#profile', as: 'auth_profile'
 
 end
